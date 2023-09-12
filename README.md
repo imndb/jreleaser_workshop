@@ -4,9 +4,16 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
-## add following mvn command:
+## run following mvn command:
 
 mvn io.quarkus.platform:quarkus-maven-plugin:3.3.2:create \-DprojectGroupId=ch.imndb.quarkus -DprojectArtifactId=jreleaser-workshop -Dextensions="picocli"
+
+# add following config for jreleaser
+
+~/.jreleaser/config.yml
+JRELEASER_GITHUB_TOKEN: <github-token-value>
+
+
 ## Running the application in dev mode
 
 
