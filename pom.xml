@@ -182,6 +182,47 @@
             <groupId>org.jreleaser</groupId>
             <artifactId>jreleaser-maven-plugin</artifactId>
             <version>1.6.0</version>
+            <configuration>
+                <jreleaser>
+                  <project>
+                    <description>Jreleaser-workshop - Sample Quarkus CLI application</description>
+                    <links>
+                      <homepage>https://github.com/imndb/jreleaser-workshop</homepage>
+                      <documentation>https://github.com/imndb/jreleaser-worshop</documentation>
+                    </links>
+                    <license>GNU GENERAL PUBLIC LICENSE</license>
+                    <authors>Iman D.</authors>
+                    <copyright>2023</copyright>
+                  </project>
+                  <release>
+                    <github>
+                      <changelog>
+                        <formatted>ALWAYS</formatted>
+                        <preset>conventional-commits</preset>
+                      </changelog>
+                    </github>
+                  </release>
+                  <distributions>
+                    <app>
+                      <type>BINARY</type>
+                      <artifacts>
+                        <artifact>
+                          <path>${distribution.directory}/{{distributionName}}-{{projectVersion}}-linux-x86_64.tar.gz</path>
+                          <platform>linux-x86_64</platform>
+                        </artifact>
+                        <artifact>
+                          <path>${distribution.directory}/{{distributionName}}-{{projectVersion}}-windows-x86_64.zip</path>
+                          <platform>windows-x86_64</platform>
+                        </artifact>
+                        <artifact>
+                          <path>${distribution.directory}/{{distributionName}}-{{projectVersion}}-osx-x86_64.zip</path>
+                          <platform>osx-x86_64</platform>
+                        </artifact>
+                      </artifacts>
+                    </app>
+                  </distributions>
+                </jreleaser>
+            </configuration>
           </plugin>
         </plugins>
       </build>
